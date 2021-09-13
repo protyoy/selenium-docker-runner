@@ -2,6 +2,12 @@ pipeline {
     // master executor should be set to 0
     agent any
     stages {
+		stage('Pull Latest Image') {
+            steps {
+                //sh
+                bat "docker pull iamprotyoy/selenium-docker"
+            }
+        }
         stage('Start Grid') {
             steps {
                 //sh
